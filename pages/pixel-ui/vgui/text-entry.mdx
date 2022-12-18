@@ -1,0 +1,80 @@
+---
+data:
+  title: text-entry.md
+---
+
+# PIXEL.TextEntry ![](http://localhost:3000/client.png)
+
+### Basic Example
+
+  ```lua #
+  function Init()
+    self.TextEntry = vgui.Create("PIXEL.TextEntry", self)
+    self.TextEntry:Dock(TOP)
+    self.TextEntry:SetTall(PIXEL.Scale(35))
+  end
+  ```
+---
+
+### Functions
+
+##### `PANEL:OnChange()`
+  Ran on text change
+##### `PANEL:OnValueChange(value)`
+  Ran when the value of the text entry changes
+##### `PANEL:IsEnabled()`
+  Returns whether the text entry is enabled
+##### `PANEL:SetEnabled()`
+  Sets whether the text entry is enabled
+##### `PANEL:GetValue()`
+  Returns the value of the text entry
+##### `PANEL:SetValue()`
+  Sets the value of the text entry
+##### `PANEL:IsMultiline()`
+  Returns whether the text entry is multiline
+##### `PANEL:SetMultiline()`
+  Sets whether the text entry is multiline
+##### `PANEL:IsEditing()`
+  Returns whether the text entry is being edited
+##### `PANEL:GetEnterAllowed()`
+  Returns whether the text entry allows the enter key to be pressed
+##### `PANEL:SetEnterAllowed()`
+  Sets whether the text entry allows the enter key to be pressed
+##### `PANEL:GetUpdateOnType()`
+  Returns whether the text entry updates on type
+##### `PANEL:SetUpdateOnType()`
+  Sets whether the text entry updates on type
+##### `PANEL:GetNumeric()`
+  Returns whether the text entry is numeric
+##### `PANEL:SetNumeric()`
+  Sets whether the text entry is numeric
+##### `PANEL:GetHistoryEnabled()`
+  Returns whether the text entry has history enabled
+##### `PANEL:SetHistoryEnabled()`
+  Sets whether the text entry has history enabled
+##### `PANEL:GetTabbingDisabled()`
+  Returns whether the text entry has tabbing disabled
+##### `PANEL:SetTabbingDisabled()`
+  Sets whether the text entry has tabbing (when you press tab) disabled
+##### `PANEL:GetPlaceholderText()`
+  Returns the placeholder text of the text entry
+##### `PANEL:SetPlaceholderText()`
+  Sets the placeholder text of the text entry
+##### `PANEL:GetInt()`
+  Returns the value of the text entry as an integer
+##### `PANEL:GetFloat()`
+  Returns the value of the text entry as a float
+##### `PANEL:SetEditable()`
+  Sets whether the text entry is editable
+##### `PANEL:AllowInput()`
+  Returns whether the text entry allows input
+##### `PANEL:GetAutoComplete()`
+  Returns the autocomplete of the text entry
+##### `PANEL:OnKeyCode(code)`
+  Ran on key code
+##### `PANEL:OnEnter()`
+  Ran when the enter key is pressed
+##### `PANEL:OnGetFocus()`
+  Ran when the text entry gets focus
+##### `PANEL:OnLoseFocus()`
+  Ran when the text entry loses focus

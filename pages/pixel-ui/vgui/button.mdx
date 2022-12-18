@@ -1,0 +1,79 @@
+---
+data:
+  title: button.md
+---
+
+# PIXEL.Button ![](http://localhost:3000/client.png)
+
+### Basic Example
+
+  ```lua #
+  function PANEL:Init()
+    self.Button = vgui.Create("PIXEL.Button", self)
+    self.Button:Dock(TOP)
+    self.Button:DockMargin(PIXEL.Scale(10), PIXEL.Scale(10), PIXEL.Scale(10), PIXEL.Scale(10))
+    self.Button:SetTall(PIXEL.Scale(50))
+    self.Button.DoClick = function()
+        print("Button clicked!")
+    end
+  end
+  ```
+
+---
+
+### Functions
+
+##### `PANEL:SetIsToggle(bool)` / `PANEL:SetToggle(bool)`
+  Used for getting/setting whether the button is a toggle button or not.
+
+  ###### Example:
+  ```lua #
+  function PANEL:Init()
+    self.Button:SetIsToggle(false)
+    self.Button:SetToggle(false)
+  end
+  ```
+
+##### `PANEL:SetClicky(bool)`
+  Used for setting if the button looks "clicky"
+
+  ###### Example:
+  ```lua #
+  function PANEL:Init()
+    self.Button:SetClicky(true)
+  end
+  ```
+
+##### `PANEL:SetSounds(bool)`
+  Used for turning off UI sounds on a specific button.
+
+  ###### Example:
+  ```lua #
+  function PANEL:Init()
+    self.Button:SetSounds(false)
+  end
+  ```
+
+##### `PANEL:PaintExtra(w,h)`
+  Used for "Painting" extra stuff onto the button without overwriting the default Paint function
+
+##### `PANEL:IsDown()`
+  Checks if the button is "down"
+
+##### `PANEL:OnPressed(mouseCode)`
+  Ran when the button is pressed
+
+##### `PANEL:OnReleased(mouseCode)`
+  Ran after the button has been released
+
+##### `PANEL:OnToggled(enabled)`
+  Ran when a toggle button has been toggled
+
+##### `PANEL:DoClick(...)`
+  Ran when the button was clicked
+
+##### `PANEL:DoRightClick(w,h)`
+  Ran when the button was right clicked
+
+##### `PANEL:DoMiddleClicked(w,h)`
+  Ran when the button was middle clicked

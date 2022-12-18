@@ -1,0 +1,105 @@
+---
+data:
+  title: frame.md
+---
+
+# PIXEL.Frame ![](http://localhost:3000/client.png)
+
+### Creating a basic frame
+
+  ```lua #
+  local PANEL = {}
+
+  function PANEL:Init()
+    self:SetSize(PIXEL.Scale(200), PIXEL.Scale(200))
+    self:Center()
+    self:MakePopup()
+
+    self:SetTitle("PIXEL UI Example Frame")
+  end
+
+  vgui.Register("PIXEL.Example", PANEL, "PIXEL.Frame")
+  ```
+
+---
+
+### Functions
+
+##### `PANEL:SetDraggable(boolean bool)`
+  Used to set whether the frame is draggable or not.
+
+  ###### Example:
+  ```lua #
+  function PANEL:Init()
+    self:SetDraggable(true)
+    print(self:GetDraggable())
+  end
+  ```
+
+##### `PANEL:SetSizable(boolean bool)`
+  Used to set whether the frame can be resized or not.
+
+  ###### Example:
+  ```lua #
+  function PANEL:Init()
+    self:SetSizable(true)
+    print(self:GetSizable())
+  end
+  ```
+
+##### `PANEL:SetMinWidth(number num)` / `PANEL:SetMinHeight(number num)`
+  Used to set the minimum size of the frame
+
+  ###### Example:
+  ```lua #
+  function PANEL:Init()
+    self:SetMinWidth(PIXEL.Scale(100))
+    self:SetMinHeight(PIXEL.Scale(100))
+
+    print(self:GetMinWidth())
+    print(self:GetMinHeight())
+  end
+  ```
+
+##### `PANEL:SetScreenLock(boolean bool)`
+  Stops the frame being dragged outside the screen
+
+  ###### Example:
+  ```lua #
+  function PANEL:Init()
+    self:SetScreenLock(true)
+    print(self:GetScreenLock())
+  end
+  ```
+
+##### `PANEL:SetRemoveOnClose(boolean bool)`
+  Used to set whether the frame should be fully removed when it is closed.
+
+  ###### Example:
+  ```lua #
+  function PANEL:Init()
+    self:SetRemoveOnClose(true)
+    print(self:GetRemoveOnClose())
+  end
+  ```
+
+##### `PANEL:SetTitle(string str)` / `PANEL:SetImgurID(string str)`
+  Used to set the panels title of the frame & the ImgurID of the frame.
+
+  ###### Example:
+  ```lua #
+  function PANEL:Init()
+    self:SetTitle("PIXEL UI Example Frame")
+    self:SetImgurID("8bKjn4t")
+  end
+  ```
+
+##### `PANEL:CreateSidebar(defaultItem, imgurID, imgurScale, imgurYOffset, buttonYOffset)`
+  Creates a sidebar on the panel
+
+  ###### Example:
+  ```lua #
+  function PANEL:Init()
+    self.Sidebar = self:CreateSidebar("Example", "8bKjn4t", 1, 0, 0)
+  end
+  ```

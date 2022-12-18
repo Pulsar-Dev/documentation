@@ -1,0 +1,43 @@
+### Full Example
+
+```lua #
+PIXEL.RegisterAddon("Test Addon 1")
+    :SetVersion("1.0")
+    :SetAuthor("Lythium")
+    :SetLogo("8bKjn4t")
+    :SetURL("https://lythium.vip")
+    :SetSupportURL("https://lythium.vip")
+    :SetDependancy("PIXELUI", "any", true)
+
+    :AddTab("Test Tab 1", "8bKjn4t", Color(255,255,255))
+    :AddButton("Test Tab 1", "Test Button", "Test Description", "Button Text", function() print("Clicked!") end)
+    :AddSlider("Test Tab 1", "Test Slider", "Test Description", function(num) print("Slide! " .. num) end, 50)
+    :AddCheckbox("Test Tab 1", "Test Checkbox", "Test Description", function(check) print("Checked! " .. tostring(check)) end, true)
+    :AddComboBox("Test Tab 1", "Test ComboBox", "Test Description", {
+        [1] = {
+            value = "Test1",
+            icon = "kVbFLrX"
+        },
+        [2] = {
+            value = "Test2",
+            icon = "fd3MKOZ"
+        },
+        [3] = {
+            value = "Test3",
+            icon = "gPvSeuu"
+        },
+    }, "Test1", function(selected) print("Selected! " .. selected) end)
+    :AddTextEntry("Test Tab 1", "Test Text Entry", "Test Description", "yo", true, function(text) print("Type! " .. text) end)
+    :AddValidatedTextEntry("Test Tab 1", "Test Validated Text Entry", "Test Description", "yo", true, function(text)
+        print("Type! " .. text)
+    end, function(text)
+        if text == "a" then
+            return true
+        else
+            return false
+        end
+    end)
+    :AddTab("Test Tab 2", "8bKjn4t")
+    :AddTab("Test Tab 3", "8bKjn4t")
+:Done()
+```

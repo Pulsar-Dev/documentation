@@ -1,0 +1,44 @@
+import { Callout } from 'nextra-theme-docs'
+
+
+# PIXEL.ImgurButton ![](http://localhost:3000/client.png)
+
+### Basic Example
+
+  ```lua #
+  function PANEL:Init()
+    self.ImgurButton = vgui.Create("PIXEL.ImgurButton", self)
+    self.ImgurButton:Dock(FILL)
+    self.ImgurButton:SetImgurID("8bKjn4t")
+    self.ImgurButton.DoClick = function()
+        print("Clicked!")
+    end
+  end
+  ```
+
+<Callout type="info" emoji="ℹ️">
+  This panel is derived from [PIXEL.Button](http://localhost:5000/pixel-ui/vgui/button/) \
+  All functions available to [PIXEL.Button](http://localhost:5000/pixel-ui/vgui/button/) will work here.
+</Callout>
+
+---
+
+### Functions
+
+##### `PANEL:SetImgurID(string)`
+  Sets the Imgur ID
+
+##### `PANEL:SetImageSize(number)`
+  Sets the image size
+
+##### `PANEL:SetNormalColor(color)`
+  Sets the normal color of the image
+
+##### `PANEL:SetHoverColor(color)`
+  Sets the hover color of the image
+
+##### `PANEL:SetClickColor(color)`
+  Sets the clicked color of the image
+
+##### `PANEL:SetDisabledColor(color)`
+  Sets the disabled color of the image

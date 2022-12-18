@@ -1,0 +1,50 @@
+---
+data:
+  title: sidebar.md
+---
+
+# PIXEL.Sidebar ![](http://localhost:3000/client.png)
+
+### Basic Example
+
+  ```lua #
+  function PANEL:Init()
+    self.Sidebar = self:CreateSidebar("PIXEL.Test.Avatar", "8bKjn4t")
+    self.Sidebar:AddItem("PIXEL.Test.Avatar", "Avatar", "8bKjn4t", function()
+		local panel = vgui.Create("PIXEL.Test.Avatar", self)
+        panel:Dock(FILL)
+	end)
+  end
+  ```
+
+---
+
+##### `PANEL:SetImgurID(string)`
+  Sets the ImgurID to show at the top of the sidebar
+
+##### `PANEL:SetImgurScale(number)`
+  Sets the scale of the icon at the top of the sidebar
+
+##### `PANEL:SetImgurOffset(number)`
+  Sets the offset of the icon at the top of the sidebar
+
+##### `PANEL:SetButtonOffset(number)`
+  Sets the offset of the buttons in the sidebar
+
+##### `PANEL:AddItem(id, name, imgurID, doClick, order)`
+  Adds an item to the sidebar
+
+###### Example:
+  ```lua #
+  function PANEL:Init()
+    self.Sidebar:AddItem("PIXEL.Test.Avatar", "Avatar", "8bKjn4t", function()
+		print("clicked!")
+	end)
+  end
+  ```
+
+##### `PANEL:RemoveItem(id)`
+  Removes an item from the sidebar
+
+##### `PANEL:SelectItem(id)`
+  Selects an item

@@ -1,0 +1,36 @@
+---
+data:
+  title: validated-text-entry.md
+---
+
+# PIXEL.ValidatedTextEntry ![](http://localhost:3000/client.png)
+
+### Basic Example
+
+  ```lua #
+  function Init()
+    self.ValidatedTextEntry = vgui.Create("PIXEL.ValidatedTextEntry", self)
+    self.ValidatedTextEntry:Dock(TOP)
+    function self.ValidatedTextEntry:IsTextValid(text)
+        if text == "hi" then
+            return true, "good"
+        else
+            return false, "bad"
+        end
+	end
+  end
+  ```
+---
+
+### Functions
+
+##### `PANEL:OnValidate()`
+  Ran on text validation
+
+##### `PANEL:IsTextValid(text)`
+  The function for validating the text
+
+
+
+##### See [here](https://github.com/Pulsar-Dev/pulsar-lib/issues) for more
+

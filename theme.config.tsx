@@ -2,17 +2,20 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
-  logo: <span>My Project</span>,
+  logo: <span>Pulsar Docs</span>,
   project: {
-    link: 'https://github.com/shuding/nextra-docs-template',
+    link: 'https://github.com/Pulsar-Dev/documentation',
   },
   chat: {
-    link: 'https://discord.com',
+    link: 'https://discord.gg/2ZQv7dVmtJ',
   },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  docsRepositoryBase: 'https://github.com/Pulsar-Dev/documentation',
   footer: {
-    text: 'Nextra Docs Template',
+    text: 'Pulsar Docs',
   },
+  sidebar: {
+    defaultMenuCollapseLevel: 0,
+  }
 }
 
 export default config

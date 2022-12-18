@@ -1,0 +1,34 @@
+import { Callout } from 'nextra-theme-docs'
+
+
+# PIXEL.Checkbox ![](http://localhost:3000/client.png)
+
+### Basic Example
+
+  ```lua #
+  function PANEL:Init()
+    self.Checkbox = vgui.Create("PIXEL.Checkbox", self)
+
+    self.LabelledCheckbox = vgui.Create("PIXEL.LabelledCheckbox", self)
+    self.LabelledCheckbox:SetText("Labelled Checkbox!")
+    self.LabelledCheckbox:SetFont("PIXEL.Font.Size25")
+  end
+  ```
+
+<Callout type="info" emoji="ℹ️">
+  This panel is derived from [PIXEL.Button](http://localhost:5000/pixel-ui/vgui/button/) \
+  All functions available to [PIXEL.Button](http://localhost:5000/pixel-ui/vgui/button/) will work here.
+</Callout>
+
+---
+
+### Functions
+
+##### `PANEL:OnChange(color)`
+  Runs when the color changes
+
+##### `PANEL:SetColor(color)`
+  Changes the color on the color picker
+
+##### `PANEL:GetHueColor()`
+  Returns the hue color

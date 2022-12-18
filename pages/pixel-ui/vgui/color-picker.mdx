@@ -1,0 +1,31 @@
+---
+data:
+  title: color-picker.md
+---
+
+# PIXEL.ColorPicker ![](http://localhost:3000/client.png)
+
+### Basic Example
+
+  ```lua #
+  function PANEL:Init()
+    self.ColorPicker = vgui.Create("PIXEL.ColorPicker", self)
+    self.ColorPicker:Dock(FILL)
+    self.ColorPicker:DockMargin(PIXEL.Scale(50), PIXEL.Scale(50), PIXEL.Scale(50), PIXEL.Scale(50))
+  end
+  ```
+
+---
+
+### Functions
+
+##### `PANEL:OnChange(color)`
+  Sets the --- color of the Checkbox
+
+  ###### Example:
+  ```lua #
+    self.Checkbox:SetNormalColor(PIXEL.Colors.Transparent)
+    self.Checkbox:SetHoverColor(PIXEL.Colors.PrimaryText)
+    self.Checkbox:SetClickColor(PIXEL.Colors.PrimaryText)
+    self.Checkbox:SetDisabledColor(PIXEL.Colors.Transparent)
+  ```

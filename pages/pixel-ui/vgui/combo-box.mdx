@@ -1,0 +1,62 @@
+import { Callout } from 'nextra-theme-docs'
+
+
+# PIXEL.ComboBox ![](http://localhost:3000/client.png)
+
+### Basic Example
+
+  ```lua #
+  function PANEL:Init()
+    self.ComboBox = vgui.Create("PIXEL.ComboBox", self)
+    self.ComboBox:Dock(TOP)
+    self.ComboBox:AddChoice("Choice 1", "Choice 1", "Choice 1")
+    self.ComboBox:AddChoice("Choice 2", "Choice 2", "Choice 2")
+    self.ComboBox:AddChoice("Choice 3", "Choice 3", "Choice 3")
+  end
+  ```
+
+<Callout type="info" emoji="ℹ️">
+This panel is derived from [PIXEL.TextButton](http://localhost:5000/pixel-ui/vgui/text-button/) \
+All functions available to [PIXEL.TextButton](http://localhost:5000/pixel-ui/vgui/text-button/) will work here.
+</Callout>
+
+---
+
+
+### Functions
+
+##### `PANEL:SetSizeToText(bool)`
+  Should the ComboBox size itself to the text?
+
+##### `PANEL:SetSortItems(bool)`
+  Should it sort the items? (alphabetically)
+
+##### `PANEL:GetOptionText(id)`
+  Returns the option text from the given id
+
+##### `PANEL:GetOptionData(id)`
+  Returns the option data from the given id
+
+##### `PANEL:GetOptionTextByData(data)`
+  Returns option text from the given data
+
+##### `PANEL:ChooseOptionID(index)`
+  Choses an option based on id
+
+##### `PANEL:GetSelectedID()`
+  Returns the ID of the currently selected option
+
+##### `PANEL:ChooseOption()`
+  Returns the currently selected option
+
+##### `PANEL:OnSelect(index, value, data)`
+  Runs when an option is selected
+
+##### `PANEL:AddChoice(value, data, select, icon)`
+  Adds a choice to the ComboBox
+
+##### `PANEL:IsMenuOpen()`
+  Returns whether the ComboBox is open or not
+
+##### `PANEL:SetValue(strValue)`
+  Sets the value in the ComboBox

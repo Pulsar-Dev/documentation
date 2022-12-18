@@ -1,0 +1,7 @@
+{
+    "configurator": "Configurator",
+    "core": "Core",
+    "drawing": "Drawing",
+    "external-libs": "External",
+    "vgui": "VGUI"
+}

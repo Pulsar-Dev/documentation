@@ -1,0 +1,42 @@
+import { Callout } from 'nextra-theme-docs'
+
+
+# PIXEL.TextButton ![](http://localhost:3000/client.png)
+
+### Basic Example
+
+  ```lua #
+  function PANEL:Init()
+    self.TextButton = vgui.Create("PIXEL.TextButton", self)
+    self.TextButton:Dock(TOP)
+    self.TextButton:SetTall(PIXEL.Scale(50))
+    self.TextButton:SetText("Text Button!")
+    self.TextButton.DoClick = function()
+       print("Clicked!")
+    end
+  end
+  ```
+
+<Callout type="info" emoji="ℹ️">
+  This panel is derived from [PIXEL.Button](http://localhost:5000/pixel-ui/vgui/button/) \
+  All functions available to [PIXEL.Button](http://localhost:5000/pixel-ui/vgui/button/) will work here.
+</Callout>
+
+---
+
+### Functions
+
+##### `PANEL:SetText(bool)`
+  Sets the text showed on the button
+
+##### `PANEL:SetTextAlign(number)`
+  Sets the alignment of the text
+
+##### `PANEL:SetTextSpacing(number)`
+  Sets the spacing between the text and the button
+
+##### `PANEL:SetFont(string)`
+  Sets the texts font
+
+##### `PANEL:SetText(bool)`
+  Sets the text showed on the button
