@@ -3,7 +3,7 @@ data:
   title: custom-packages.md
 ---
 
-# Custom Packages ![](https://github.com/Pulsar-Dev/documentation/blob/main/public/server.png)
+# Custom Packages ![](https://raw.githubusercontent.com/Pulsar-Dev/documentation/main/public/server.png)
 
 1. Create a new file in `lua/pulsar/packages/modules` called `sv_PackageName.lua `
 2. Paste the following code inside the file you just created

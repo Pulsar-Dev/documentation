@@ -3,7 +3,7 @@ data:
   title: categorys.md
 ---
 
-# Categorys ![](https://github.com/Pulsar-Dev/documentation/blob/main/public/server.png)
+# Categorys ![](https://raw.githubusercontent.com/Pulsar-Dev/documentation/main/public/server.png)
 
 ##### `Lyth_Pulsar.SendItemsToUser(ply, ret)`
   Resends the items to the user

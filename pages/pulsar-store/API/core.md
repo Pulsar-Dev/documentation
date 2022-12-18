@@ -3,7 +3,7 @@ data:
   title: core.md
 ---
 
-# Server Core ![](https://github.com/Pulsar-Dev/documentation/blob/main/public/server.png)
+# Server Core ![](https://raw.githubusercontent.com/Pulsar-Dev/documentation/main/public/server.png)
 
 ##### `Lyth_Pulsar.RequestDataUpdate(ply, sendData)`
   Resends all data to the client
@@ -19,7 +19,7 @@ data:
     - This function is asynchronous and will return a boolean if no callback is provided
 ---
 
-# Client Core ![](https://github.com/Pulsar-Dev/documentation/blob/main/public/client.png)
+# Client Core ![](https://raw.githubusercontent.com/Pulsar-Dev/documentation/main/public/client.png)
 
 ##### `Lyth_Pulsar.OpenMenu()`
   Opens the menu
