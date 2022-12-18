@@ -3,7 +3,7 @@ data:
   title: credits.md
 ---
 
-# Credits ![](http://localhost:3000/server.png)
+# Credits ![](https://github.com/Pulsar-Dev/documentation/blob/main/public/server.png)
 
 ##### `Lyth_Pulsar.DB.GetCredits(userid, callback)`
   Gets the amount of credits that a steamid64 has

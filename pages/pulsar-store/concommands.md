@@ -3,7 +3,7 @@ data:
   title: categorys.md
 ---
 
-# Server Console Commands ![](http://localhost:3000/server.png)
+# Server Console Commands ![](https://github.com/Pulsar-Dev/documentation/blob/main/public/server.png)
 
 ##### `pulsar_credits_give steamid64 amount`
   Gives the steamid64 the specified amount of credits
@@ -16,7 +16,7 @@ data:
 ##### `pulsar_import_bricks`
   Imports data from Bricks Credit Store
 
-# Client Console Commands ![](http://localhost:3000/client.png)
+# Client Console Commands ![](https://github.com/Pulsar-Dev/documentation/blob/main/public/client.png)
 
 ##### `pulsar_open`
   Opens the store menu
