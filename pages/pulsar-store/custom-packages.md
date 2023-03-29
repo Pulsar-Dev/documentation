@@ -24,7 +24,10 @@ data:
     end
 
     local function prePurchaseHandler(ply, package, packageargs, perma)
-
+        return {
+            canFinish = true, -- Can the purchase carry on
+            mesage = "test" -- Notification to give player if not
+        }
     end
 
     return {
