@@ -1,13 +1,33 @@
-import { Callout } from 'nextra-theme-docs'
+import { Card, Cards } from "nextra-theme-docs";
 
-# Pulsar Docs
+# Welcome
+This is the documentation site for all Pulsar projects, select one from the cards below to get started:
 
-### Info
-
-Client Only = ![](https://raw.githubusercontent.com/Pulsar-Dev/documentation/main/public/client.png) \
-Server Only = ![](https://raw.githubusercontent.com/Pulsar-Dev/documentation/main/public/server.png) \
-Client and Server = ![](https://raw.githubusercontent.com/Pulsar-Dev/documentation/main/public/shared.png)
-
-<Callout type="warning" emoji="⚠️">
-  **Found a bug?** Report it [here!](https://github.com/Pulsar-Dev/pulsar-lib/issues)
-</Callout>
+<Cards>
+	<Card
+		icon={
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 512 512"
+				className="h-6 w-6 fill-current"
+			>
+				<path d="M224 80V432H448c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H224zM0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm64 24c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H88c-13.3 0-24 10.7-24 24zm24 72c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H88zM64 312c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H88c-13.3 0-24 10.7-24 24z" />
+			</svg>
+		}
+		title="PIXEL UI"
+		href="https://docs.tomdotbat.dev/pixel-ui/getting-started"
+	/>
+	<Card
+		icon={
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 512 512"
+				className="h-6 w-6 fill-current"
+			>
+				<path d="M258.8 50.7c-1.8-.7-3.8-.7-5.7 0L63.6 122.6 256 198.2l192.4-75.6L258.8 50.7zM48 377.9c0 3.3 2.1 6.3 5.2 7.5L232 453.2V240.4L48 168.1V377.9zm232 75.3l178.8-67.8c3.1-1.2 5.2-4.2 5.2-7.5V168.1L280 240.4V453.2zM236.1 5.9c12.8-4.9 26.9-4.9 39.7 0l200 75.9C497.6 90 512 110.8 512 134.1V377.9c0 23.3-14.4 44.1-36.1 52.4l-200 75.9c-12.8 4.9-26.9 4.9-39.7 0l-200-75.9C14.4 422 0 401.2 0 377.9V134.1C0 110.8 14.4 90 36.1 81.7l200-75.9z"/>
+			</svg>
+		}
+		title="Pulsar Store"
+		href="/pulsar-store/getting-started"
+	/>
+</Cards>

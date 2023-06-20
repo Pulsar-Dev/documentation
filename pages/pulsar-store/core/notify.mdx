@@ -1,0 +1,29 @@
+import Method from "/components/method";
+import Argument from "/components/method/argument";
+
+# PulsarStore.Notify
+
+## Server
+<Method
+	name="PulsarStore.Notify"
+	realm="server"
+	args={[
+		<Argument type="player" name="player">The player to send the notification to</Argument>,
+		<Argument type="string" name="message">The message to send</Argument>
+	]}
+	returns={[]}
+>
+	Sends the client a notification
+</Method>
+
+## Client
+<Method
+	name="PulsarStore.Notify"
+	realm="client"
+	args={[
+		<Argument type="string" name="message">The message</Argument>
+	]}
+	returns={[]}
+>
+	Sends a notification
+</Method>

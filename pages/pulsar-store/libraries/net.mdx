@@ -1,0 +1,140 @@
+import MethodList from "../../../components/method_list";
+import {Callout} from "nextra-theme-docs";
+
+# Net Library
+The Net library is very similar to the base gmod net library except it has a few more features.
+
+<Callout emoji="💡">
+	On the client there is a feature called the **Network Queue**. This is a queue of net messages that get sent to the server in order.<br/>
+	This is useful for when you want to send a lot of net messages but need a way of going around the rate limit.<br/>
+	The network queue **CANNOT** be bypassed or disabled.
+</Callout>
+
+## Global Server Methods
+<MethodList methods={[
+	{
+		name: "Receive",
+		parent: "PulsarStore.Net.",
+		description: "Receives a net message from the client with rate limits and an option for restricting to certain groups.",
+		args: ["name, function, allowedGroups"],
+		returns: [""],
+	},
+	{
+		name: "Start",
+		parent: "PulsarStore.Net.",
+		description: "Starts a net message",
+		args: ["name"],
+		returns: [""],
+	},
+	{
+		name: "Send",
+		parent: "PulsarStore.Net.",
+		description: "Sends a net message to a client",
+		args: ["ply"],
+		returns: [""],
+	},
+	{
+		name: "String",
+		parent: "PulsarStore.Net.",
+		description: "Creates a network string",
+		args: ["name"],
+		returns: [""],
+	},
+	{
+		name: "Error",
+		parent: "PulsarStore.Net.",
+		description: "Sends a message to a client saying there was an error.",
+		args: ["ply, netString, message"],
+		returns: [""],
+	}
+]} />
+
+## Global Client Methods
+<MethodList methods={[
+	{
+		name: "Receive",
+		parent: "PulsarStore.Net.",
+		description: "Receives a net message from the server.",
+		args: ["name, function, allowedGroups"],
+		returns: [""],
+	},
+	{
+		name: "Start",
+		parent: "PulsarStore.Net.",
+		description: "Starts a net message",
+		args: ["name"],
+		returns: [""],
+	},
+	{
+		name: "Send",
+		parent: "PulsarStore.Net.",
+		description: "Sends a net message to a server",
+		args: ["ply"],
+		returns: [""],
+	}
+]} />
+
+## Network "Builder" Methods
+The network builder is used on the client for the network queue to work correctly. This has no extra special features on the serverside and just exists to make the client networking and server networking similar.
+These network messages can be received the same way as normal net messages.
+
+### Example
+```lua
+PulsarStore.Net.Start("ExampleNetMessage")
+	:WriteBool(true)
+	:WriteInt(123, 32)
+	:WriteUInt(123, 32)
+	:WriteString("Hello World")
+:Send()
+```
+<MethodList methods={[
+	{
+		name: "Start",
+		parent: "PulsarStore.Net.",
+		description: "Starts the net message",
+		args: ["name"],
+		returns: ["NetData"],
+	},
+	{
+		name: "WriteBool",
+		parent: "NetData:",
+		description: "Writes a boolean to the net message",
+		args: ["bool"],
+		returns: ["NetData"],
+	},
+	{
+		name: "WriteInt",
+		parent: "NetData:",
+		description: "Writes a int to the net message",
+		args: ["data, bits"],
+		returns: ["NetData"],
+	},
+	{
+		name: "WriteUInt",
+		parent: "NetData:",
+		description: "Writes a uint to the net message",
+		args: ["data, bits"],
+		returns: ["NetData"],
+	},
+	{
+		name: "WriteString",
+		parent: "PulsarStore.Net.",
+		description: "Writes a string to the net message",
+		args: ["data"],
+		returns: ["NetData"],
+	},
+	{
+		name: "WriteTable",
+		parent: "NetData:",
+		description: "Writes a table to the net message",
+		args: ["data"],
+		returns: ["NetData"],
+	},
+	{
+		name: "Send",
+		parent: "NetData:",
+		description: "Sends the net message",
+		args: ["data"],
+		returns: [""],
+	},
+]} />

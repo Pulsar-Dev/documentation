@@ -1,0 +1,81 @@
+import {Callout, Card, Cards, FileTree} from "nextra-theme-docs";
+
+# Configuration
+Pulsar Store's configuration is mostly ingame, but there are some things that you need to configure in the files. This page will go over the configuration files and how to configure them.
+
+<FileTree>
+	<FileTree.Folder name="pulsar-store" defaultOpen>
+		<FileTree.Folder name="lua" defaultOpen>
+			<FileTree.Folder name="pulsar-store" defaultOpen>
+				<FileTree.Folder name="config" defaultOpen>
+					<FileTree.Folder name="currencies">
+						<FileTree.File name="sh_darkrp.lua" />
+						<FileTree.File name="sh_pulsar.lua" />
+					</FileTree.Folder>
+					<FileTree.Folder name="importers">
+						<FileTree.File name="sv_bricks_sqlite.lua" />
+						<FileTree.File name="sv_pulsar_v2_mysql.lua" />
+						<FileTree.File name="sv_pulsar_v2_sqlite.lua" />
+					</FileTree.Folder>
+					<FileTree.File name="sv_mysql.lua" />
+				</FileTree.Folder>
+			</FileTree.Folder>
+		</FileTree.Folder>
+	</FileTree.Folder>
+</FileTree>
+
+
+## MySQL
+MySQL is not required to run Pulsar Store, but it is used for storing data when you have more than one server. If you only have one server, you can use SQLite is reccomended.
+
+### MySQL Configuration
+The MySQL configuration file can be found at the following location:
+<FileTree>
+	<FileTree.Folder name="pulsar-store" defaultOpen>
+		<FileTree.Folder name="lua" defaultOpen>
+			<FileTree.Folder name="pulsar-store" defaultOpen>
+				<FileTree.Folder name="config" defaultOpen>
+					<FileTree.File name="sv_mysql.lua" />
+				</FileTree.Folder>
+			</FileTree.Folder>
+		</FileTree.Folder>
+	</FileTree.Folder>
+</FileTree>
+
+The configuration file is pretty self-explanatory, but if you need help, you can find it below:
+```lua
+PulsarStore.Config.MySQL.SQLEnabled = true -- Is MySQL enabled? If this is false, Pulsar Store will use SQLite instead.
+PulsarStore.Config.MySQL.Host = "localhost" -- The host of the MySQL server.
+PulsarStore.Config.MySQL.Username = "pulsar-user" -- The username of the MySQL server.
+PulsarStore.Config.MySQL.Password = "Pa$$word1" -- The password of the MySQL server.
+PulsarStore.Config.MySQL.Database = "pulsar-database" -- The database of the MySQL server.
+PulsarStore.Config.MySQL.Port = 3306 -- The port of the MySQL server.
+```
+
+## Currencies
+Currencies are the different types of currency that you can use in Pulsar Store. You can have as many currencies as you want, but you need at least one. The default currency is Pulsar Credits.
+
+<Callout emoji="⚠️">
+	Removing the default currency is **NOT** recommended, as it is used for a lot of things.<br/>
+	The addon may not function correctly if you remove the default currency.<br/>
+	**No support will be given if you remove the default currency.**
+</Callout>
+
+<Cards>
+	<Card
+		icon={
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 512 512"
+				className="h-6 w-6 fill-current"
+			>
+				<path d="M258.8 50.7c-1.8-.7-3.8-.7-5.7 0L63.6 122.6 256 198.2l192.4-75.6L258.8 50.7zM48 377.9c0 3.3 2.1 6.3 5.2 7.5L232 453.2V240.4L48 168.1V377.9zm232 75.3l178.8-67.8c3.1-1.2 5.2-4.2 5.2-7.5V168.1L280 240.4V453.2zM236.1 5.9c12.8-4.9 26.9-4.9 39.7 0l200 75.9C497.6 90 512 110.8 512 134.1V377.9c0 23.3-14.4 44.1-36.1 52.4l-200 75.9c-12.8 4.9-26.9 4.9-39.7 0l-200-75.9C14.4 422 0 401.2 0 377.9V134.1C0 110.8 14.4 90 36.1 81.7l200-75.9z"/>
+			</svg>
+		}
+		title="Currencies"
+		href="/pulsar-store/currencies"
+	/>
+</Cards>
+
+## Changing Language
+You can change the language of Pulsar Store by changing the language in the configuration file. The default language is English.

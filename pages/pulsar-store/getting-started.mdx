@@ -1,0 +1,27 @@
+import { Callout } from "nextra/components";
+import { FileTree } from "nextra-theme-docs";
+
+# Getting Started
+To get started, you'll need to install both `pixel-ui` and `pulsar-store` into your `garrysmod/addons` folder.
+The folder structure should look like this:
+<FileTree>
+	<FileTree.Folder name="garrysmod" defaultOpen>
+		<FileTree.Folder name="addons" defaultOpen>
+			<FileTree.Folder name="pixel-ui" defaultOpen>
+				<FileTree.Folder name="..." defaultOpen>
+				</FileTree.Folder>
+				<FileTree.File name="README.md" />
+			</FileTree.Folder>
+			<FileTree.Folder name="pulsar-store" defaultOpen>
+				<FileTree.Folder name="..." defaultOpen>
+				</FileTree.Folder>
+				<FileTree.File name="README.md" />
+			</FileTree.Folder>
+		</FileTree.Folder>
+	</FileTree.Folder>
+</FileTree>
+
+
+<Callout emoji="💡">
+	The addon folder name must not contain capital letters on **Linux** servers and will fail to load if it does.
+</Callout>

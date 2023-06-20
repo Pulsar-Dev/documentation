@@ -1,0 +1,16 @@
+import Method from "/components/method";
+import Argument from "/components/method/argument";
+
+# UpdateByID
+<Method
+	name="PulsarStore.Table.UpdateByID"
+	realm="shared"
+	args={[
+		<Argument type="table" name="table">The table to look in</Argument>,
+		<Argument type="number" name="id">The ID to look for</Argument>,
+		<Argument type="table" name="table">The new table that the old one will be replaced by</Argument>
+		]}
+	returns={[]}
+>
+	Updates a table from a parent table based on a given ID.
+</Method>
