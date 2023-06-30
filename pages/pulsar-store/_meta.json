@@ -1,50 +1,15 @@
 {
-    "getting-started": "Getting Started",
-    "configuration": "Configuration",
-    "--currencies": {
-        "title": "Currencies",
-        "type": "separator"
-    },
-    "currencies": "Currencies",
-    "--migrating": {
-        "title": "Migrating",
-        "type": "separator"
-    },
-    "migrating-pulsarv2": "Migrating from Pulsar 2.x",
-    "migrating-bricks": "Migrating from Bricks",
-    "--actions": {
-        "title": "Package Actions",
-        "type": "separator"
-    },
-    "actions": "Actions",
-    "string-replacements": "String Replacements",
-    "--libraries": {
-        "title": "Libraries",
-        "type": "separator"
-    },
-    "libraries": "Libraries",
-    "--api": {
-        "title": "API Reference",
-        "type": "separator"
-    },
-    "core": "Core",
-    "bundlepackages": "Bundle Packages",
-    "bundles": "Bundles",
-    "buying": "Buying",
-    "categories": "Categories",
-    "convert": "Converting",
-    "discounts": "Discounts",
-    "packageactions": "Package Actions",
-    "packages": "Packages",
-    "purchases": "Purchases",
-    "users": "Users",
-    "--more": {
-        "title": "More",
-        "type": "separator"
-    },
-    "gmodstore": {
-        "title": "Gmodstore Page ↗",
-        "href": "https://www.gmodstore.com/market/view/pulsar-a-simple-ingame-store",
-        "newWindow": true
-    }
+  "getting-started": "Getting Started",
+  "configuration": "Configuration",
+  "translations": "Translations",
+  "credits": "Credits",
+  "--more": {
+    "title": "More",
+    "type": "separator"
+  },
+  "gmodstore": {
+    "title": "Gmodstore Page ↗",
+    "href": "https://www.gmodstore.com/market/view/pulsar-a-simple-ingame-store",
+    "newWindow": true
+  }
 }

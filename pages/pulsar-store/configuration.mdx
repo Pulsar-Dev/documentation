@@ -1,81 +1,120 @@
-import {Callout, Card, Cards, FileTree} from "nextra-theme-docs";
+import {
+	Callout,
+	FileTree
+} from "nextra-theme-docs";
 
 # Configuration
-Pulsar Store's configuration is mostly ingame, but there are some things that you need to configure in the files. This page will go over the configuration files and how to configure them.
+
+The configuration files can be found in the base directory of the addon. There should be two different configuration files: `sv_config.lua` and `sh_config.lua`.
 
 <FileTree>
-	<FileTree.Folder name="pulsar-store" defaultOpen>
-		<FileTree.Folder name="lua" defaultOpen>
+	<FileTree.Folder name="garrysmod" defaultOpen>
+		<FileTree.Folder name="addons" defaultOpen>
 			<FileTree.Folder name="pulsar-store" defaultOpen>
-				<FileTree.Folder name="config" defaultOpen>
-					<FileTree.Folder name="currencies">
-						<FileTree.File name="sh_darkrp.lua" />
-						<FileTree.File name="sh_pulsar.lua" />
+				<FileTree.Folder name="lua" defaultOpen>
+					<FileTree.Folder name="lyth_pulsar" defaultOpen>
+						<FileTree.Folder name="..."/>
+						<FileTree.File name="sv_config.lua" />
+						<FileTree.File name="sh_config.lua" />
 					</FileTree.Folder>
-					<FileTree.Folder name="importers">
-						<FileTree.File name="sv_bricks_sqlite.lua" />
-						<FileTree.File name="sv_pulsar_v2_mysql.lua" />
-						<FileTree.File name="sv_pulsar_v2_sqlite.lua" />
-					</FileTree.Folder>
-					<FileTree.File name="sv_mysql.lua" />
 				</FileTree.Folder>
 			</FileTree.Folder>
 		</FileTree.Folder>
 	</FileTree.Folder>
 </FileTree>
 
-
-## MySQL
-MySQL is not required to run Pulsar Store, but it is used for storing data when you have more than one server. If you only have one server, you can use SQLite is reccomended.
-
-### MySQL Configuration
-The MySQL configuration file can be found at the following location:
-<FileTree>
-	<FileTree.Folder name="pulsar-store" defaultOpen>
-		<FileTree.Folder name="lua" defaultOpen>
-			<FileTree.Folder name="pulsar-store" defaultOpen>
-				<FileTree.Folder name="config" defaultOpen>
-					<FileTree.File name="sv_mysql.lua" />
-				</FileTree.Folder>
-			</FileTree.Folder>
-		</FileTree.Folder>
-	</FileTree.Folder>
-</FileTree>
-
-The configuration file is pretty self-explanatory, but if you need help, you can find it below:
-```lua
-PulsarStore.Config.MySQL.SQLEnabled = true -- Is MySQL enabled? If this is false, Pulsar Store will use SQLite instead.
-PulsarStore.Config.MySQL.Host = "localhost" -- The host of the MySQL server.
-PulsarStore.Config.MySQL.Username = "pulsar-user" -- The username of the MySQL server.
-PulsarStore.Config.MySQL.Password = "Pa$$word1" -- The password of the MySQL server.
-PulsarStore.Config.MySQL.Database = "pulsar-database" -- The database of the MySQL server.
-PulsarStore.Config.MySQL.Port = 3306 -- The port of the MySQL server.
-```
-
-## Currencies
-Currencies are the different types of currency that you can use in Pulsar Store. You can have as many currencies as you want, but you need at least one. The default currency is Pulsar Credits.
+## Server Configuration
+The server configuration file is located in `pulsar-store/lua/lyth_pulsar/sv_config.lua`.
+This file contains all the server-side configuration options for the addon.
 
 <Callout emoji="⚠️">
-	Removing the default currency is **NOT** recommended, as it is used for a lot of things.<br/>
-	The addon may not function correctly if you remove the default currency.<br/>
-	**No support will be given if you remove the default currency.**
+	The only thing that should be touched in this file is the `Lyth_Pulsar.Config.SV` table. Touching anything else may cause unintended issues such as data loss.
 </Callout>
 
-<Cards>
-	<Card
-		icon={
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 512 512"
-				className="h-6 w-6 fill-current"
-			>
-				<path d="M258.8 50.7c-1.8-.7-3.8-.7-5.7 0L63.6 122.6 256 198.2l192.4-75.6L258.8 50.7zM48 377.9c0 3.3 2.1 6.3 5.2 7.5L232 453.2V240.4L48 168.1V377.9zm232 75.3l178.8-67.8c3.1-1.2 5.2-4.2 5.2-7.5V168.1L280 240.4V453.2zM236.1 5.9c12.8-4.9 26.9-4.9 39.7 0l200 75.9C497.6 90 512 110.8 512 134.1V377.9c0 23.3-14.4 44.1-36.1 52.4l-200 75.9c-12.8 4.9-26.9 4.9-39.7 0l-200-75.9C14.4 422 0 401.2 0 377.9V134.1C0 110.8 14.4 90 36.1 81.7l200-75.9z"/>
-			</svg>
-		}
-		title="Currencies"
-		href="/pulsar-store/currencies"
-	/>
-</Cards>
+### Configuration Options
 
-## Changing Language
-You can change the language of Pulsar Store by changing the language in the configuration file. The default language is English.
+```lua
+Lyth_Pulsar.Config.SV = {
+    DefaultAmount = 0, -- This is a number which defines how many credits the users starts with on their first join.
+    MySQL = {
+        DBType = "sqlite", -- Set this to "mysql" if you want to use MySQL. If you do not know what this is i recommend you leave it as "sqlite".
+        Hostname = "",  -- The hostname of the MySQL server. This is only used if you have DBType set to "mysql".
+        Username = "",	-- The username of the MySQL server. This is only used if you have DBType set to "mysql".
+        Password = "",	-- The password of the MySQL server. This is only used if you have DBType set to "mysql".
+        Database = "",	-- The database of the MySQL server. This is only used if you have DBType set to "mysql".
+        Port = 3306,	-- The port of the MySQL server. This is only used if you have DBType set to "mysql".
+        TablePrefix = "lythpulsar_"	-- The table prefix to use inside the database.
+    }
+}
+```
+
+## Shared Configuration
+The shared configuration file is located in `pulsar-store/lua/lyth_pulsar/sh_config.lua`.
+This file contains all the shared configuration options for the addon.
+
+### Configuration Options
+
+```lua
+-- Discount Configuration
+Config.DiscountItems = { -- This is a table of items that will be discounted.
+	["Item Name"] = 0.5 -- This is the discount multiplier. 0.5 = 50% discount, 0.25 = 25% discount, etc.
+}
+
+-- F4 Menu Configuration - Only supports PIXEL F4.
+Config.PIXELF4Integration = true -- Should a Pulsar Store tab be added to PIXEL F4?
+Config.F4Name = "Credit Store" -- The name to show on the f4 menu sidebar
+Config.F4Icon = "YWSjW8T" -- The icon to show on the f4 menu sidebar
+
+-- Credits Configuration
+Config.GiveCreditsPeriodically = false -- Should we give players credits every x minutes?
+--[[
+Example:
+Config.GiveCreditsPeriodically = 10 -- Every 10 minutes
+Config.GiveCreditsPeriodically = 60 -- Every hour
+Config.GiveCreditsPeriodically = 60 * 24 -- Every day
+--]]
+
+Config.EnableConversion = true -- Enable the Money Conversion?
+Config.EnableBuyingCredits = true -- Enable Converting Money to Credits?
+Config.EnableSellingCredits = true -- Enable Converting Credits to Money?
+
+Config.CreditPrice = 100 -- How much does 1 credit cost?
+Config.SellItemsBack = true -- Allows the player to sell their permanant items back to the store
+Config.SellBackReturn = 0.50 -- The ammount of credits the player will get back for selling back their permanant items (0.50 = 50% of the original price)
+
+-- Other
+Config.EnableConfetti = true -- Should confetti be enabled when a player purchases something?
+Config.PreiodicallyAmount = 100	-- The amount of credits to give players every x minutes.
+Config.ChatCommand = "!store" -- Chat command to open the store
+Config.UITitle = "Pulsar Store" -- Title of the store
+Config.NPCModel = "models/Humans/Group01/Male_04.mdl" -- Model of the NPC
+Config.NPCOverheadName = "Pulsar" -- The Name That Goes Above The NPC Head
+Config.Language = "en" -- Language of the store
+--[[
+    Languages Avalable:
+    "en" - English
+    "de" - German
+    "es" - Spanish
+    "tr" - Turkish
+    "ru" - Russian
+    "fr" - French
+--]]
+Config.DisablePermaTag = false -- Disable the [Perma] tag on items
+Config.RainbowIfPerma = true -- If the item is permanent, make the item name rainbow
+Config.UIFont = "Rubik" -- The font to display in all UI's. WARNING: Changing this may cause text to be missplaced!
+
+-- Ranks that are allowed edit the stores config (add items, categorys, etc)
+Config.AdminRanks = {
+    ["superadmin"] = true,
+    ["admin"] = true,
+    ["owner"] = true
+}
+
+
+-- Package config
+Config.ArmorDefault = 0 -- The default armor to assign to a player when they return a package
+Config.DefaultDamage = 100 -- The default damage to assign to a player when they return a package
+Config.HealthDefault = 100 -- The default health to assign to a player when they return a package
+Config.JumpDefault = 200 -- The default jump power to assign to a player when they return a package
+Config.DefaultModel = "models/Humans/Group01/Female_01.mdl" -- The default model to assign to a player when they return a package
+```
