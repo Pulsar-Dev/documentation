@@ -3,6 +3,15 @@
   "configuration": "Configuration",
   "translations": "Translations",
   "credits": "Credits",
+  "concommands": "Console Commands",
+  "--api": {
+    "title": "API",
+    "type": "separator"
+  },
+  "items": "Items",
+  "creditsapi": "Credits",
+  "core": "Core",
+  "categories": "Category's",
   "--more": {
     "title": "More",
     "type": "separator"
