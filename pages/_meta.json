@@ -1,4 +1,9 @@
 {
-    "index": "Introduction",
+    "*": {
+        "type": "page"
+    },
+    "index": "Home",
+    "pulsar-store-2": "Pulsar Store 2",
+    "pulsar-custom-jobs": "Pulsar Custom Jobs",
     "pixel-ui": "PIXEL UI"
 }

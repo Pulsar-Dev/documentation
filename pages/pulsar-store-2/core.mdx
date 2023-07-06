@@ -1,0 +1,130 @@
+import MethodList from "../../components/method_list";
+
+# Core
+
+## Server Core
+<MethodList methods={[
+	{
+		name: "Notify",
+		parent: "PulsarStore.",
+		description: "Sends a notification to a client",
+		args: ["ply, message"],
+		returns: [""],
+	},
+	{
+		name: "SendClientData",
+		parent: "PulsarStore.",
+		description: "Sends a client their data. (Credits and purchases)",
+		args: ["ply"],
+		returns: [""],
+	},
+	{
+		name: "SendCredits",
+		parent: "PulsarStore.",
+		description: "Sends a client their credits.",
+		args: ["ply"],
+		returns: [""],
+	},
+	{
+		name: "SendAPIData",
+		parent: "PulsarStore.",
+		description: "Sends a client all data from the API.",
+		args: ["ply"],
+		returns: [""],
+	},
+]} />
+
+## Client Core
+<MethodList methods={[
+	{
+		name: "Notify",
+		parent: "PulsarStore.",
+		description: "Sends a notification",
+		args: ["message"],
+		returns: [""],
+	},
+	{
+		name: "RequestAllData",
+		parent: "PulsarStore.",
+		description: "Requests the server to send literally everything",
+		args: [""],
+		returns: [""],
+	},
+	{
+		name: "RequestDataUpdate",
+		parent: "PulsarStore.",
+		description: "Requests the server to send API data",
+		args: [""],
+		returns: [""],
+	},
+	{
+		name: "RequestClientDataUpdate",
+		parent: "PulsarStore.",
+		description: "Requests the server to send client data (purchases, credits)",
+		args: [""],
+		returns: [""],
+	},
+	{
+		name: "RequestCreditsUpdate",
+		parent: "PulsarStore.",
+		description: "Requests the server to send credits data",
+		args: [""],
+		returns: [""],
+	},
+	{
+		name: "OpenStore",
+		parent: "PulsarStore.",
+		description: "Opens the store menu",
+		args: [""],
+		returns: [""],
+	},
+	{
+		name: "CloseStore",
+		parent: "PulsarStore.",
+		description: "Closes the store menu",
+		args: [""],
+		returns: [""],
+	},
+	{
+		name: "ToggleStore",
+		parent: "PulsarStore.",
+		description: "Toggles the store menu",
+		args: [""],
+		returns: [""],
+	},
+	{
+		name: "OpenAdmin",
+		parent: "PulsarStore.",
+		description: "Opens the admin menu",
+		args: [""],
+		returns: [""],
+	},
+	{
+		name: "CloseAdmin",
+		parent: "PulsarStore.",
+		description: "Closes the admin menu",
+		args: [""],
+		returns: [""],
+	},
+	{
+		name: "ToggleAdmin",
+		parent: "PulsarStore.",
+		description: "Toggles the admin menu",
+		args: [""],
+		returns: [""],
+	},
+	{
+		name: "Get",
+		parent: "PulsarStore.Actions",
+		description: "Gets an action",
+		args: ["name"],
+		returns: [""],
+	},
+	{
+		name: "GetAll",
+		parent: "PulsarStore.Actions",
+		description: "Gets all actions",
+		args: [""],
+		returns: [""],
+	},
+]} />

@@ -1,0 +1,17 @@
+import {Callout} from "nextra-theme-docs";
+
+# Migrating from BricksCreditStore to Pulsar v3.x
+
+## Introduction
+This document describes the steps to import your data from BricksCreditStore to v3.x.
+Importing your data is a quick and easy process.
+
+1. Do NOT delete your <span class="text-yellow-400 dark:text-yellow-400">BricksCreditStore</span> data. If you do it will be unrecoverable.
+2. Enable the <span class="text-yellow-400 dark:text-yellow-400">BricksCreditStore</span>  to <span class="text-rose-500 dark:text-rose-500">PulsarStore v3.x</span> importing tool by changing `Config.Enabled` to `true` in the importer config. This can be found in `pulsarstore/lua/pulsar_store/config/importers/sv_bricks_sqlite.lua`
+4. Run the console command `pulsarstore_import BricksCreditStore SQLite` to start the import process. This may take a while depending on the size of your data.
+5. Once the import is complete, you can disable the importer by changing `Config.Enabled` to `false` in the importer config.
+6. Restarting your server is recommended but not required.
+
+<Callout emoji="💡">
+	Some data may not be imported. This could be due to unsupported data types or packages that are not available in <span className="text-rose-500 dark:text-rose-500">Pulsar v3.x</span>.
+</Callout>
