@@ -11,7 +11,7 @@
     "dependencies": {
         "@vercel/og": "^0.5.8",
         "clsx": "^1.2.1",
-        "next": "^13.484",
+        "next": "^13.4.8",
         "nextra": "^2.8.0",
         "nextra-theme-docs": "^2.8.0",
         "react": "^18.2.0",
