@@ -1,0 +1,13 @@
+
+# Migrating from Pulsar Store 2 to Store 3
+
+## Introduction
+<span className="text-teal-400 dark:text-teal-400">Pulsar Store 1</span> to <span className="text-rose-500 dark:text-rose-500">Store 2</span> is a major upgrade. This document describes the steps to import your data from Pulsar Store 1 to Store 2.
+Importing your data is a quick and easy process.
+
+1. Do NOT delete your <span class="text-teal-400 dark:text-teal-400">Pulsar Store 2</span> data. If you do it will be unrecoverable.
+2. Enable the <span class="text-teal-400 dark:text-teal-400">Pulsar Store 2</span> to <span class="text-rose-500 dark:text-rose-500">Store 3</span> importing tool by changing `Config.Enabled` to `true` in the importer config. This can be found in `pulsarstore/lua/pulsar_store/config/importers/sv_pulsar_v2_[sqlite/mysql].lua`
+3. If you were using MySQL for <span class="text-teal-400 dark:text-teal-400">Pulsar Store 2</span>, you will need to change the MySQL details in the same config file.
+4. Run the console command `pulsarstore_import PulsarV2 [SQLite/MySQL]` to start the import process. This may take a while depending on the size of your data.
+5. Once the import is complete, you can disable the importer by changing `Config.Enabled` to `false` in the importer config.
+6. Restarting your server is recommended but not required.
