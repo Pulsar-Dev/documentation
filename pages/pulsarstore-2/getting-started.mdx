@@ -11,17 +11,12 @@ The folder structure should look like this:
 <FileTree>
 	<FileTree.Folder name="garrysmod" defaultOpen>
 		<FileTree.Folder name="addons" defaultOpen>
-			<FileTree.Folder name="pixel-ui" defaultOpen>
+			<FileTree.Folder name="pulsar-lib" defaultOpen>
 				<FileTree.Folder name="..." defaultOpen>
 				</FileTree.Folder>
 				<FileTree.File name="README.md" />
 			</FileTree.Folder>
 			<FileTree.Folder name="pulsar-store-2" defaultOpen>
-				<FileTree.Folder name="..." defaultOpen>
-				</FileTree.Folder>
-				<FileTree.File name="README.md" />
-			</FileTree.Folder>
-			<FileTree.Folder name="gm_express" defaultOpen>
 				<FileTree.Folder name="..." defaultOpen>
 				</FileTree.Folder>
 				<FileTree.File name="README.md" />
@@ -43,17 +38,13 @@ To install the addons, simply drag and drop the folders into your `garrysmod/add
 2. Extract the contents of the zip file into your `garrysmod/addons` folder.
 3. Ensure the addon name does not contain capital letters.
 
-## PIXEL UI
-<Callout emoji="💡">
-	Please note that PulsarStore **REQUIRES** the PulsarDevelopment fork of PIXEL UI as it contains special features for PulsarStore that are not in the main version.
-</Callout>
-
-1. Download the latest version of PIXEL UI from the [releases page](https://github.com/Pulsar-Dev/pixel-ui/releases/tag/1.3.2).
+## PulsarLib
+1. Download the latest version of PulsarLib from the [releases page](https://github.com/Pulsar-Dev/pixel-ui/releases/tag/1.3.2) if it has not come in the zip from gmodstore.
 2. Extract the contents of the zip file into your `garrysmod/addons` folder.
 3. Ensure the addon name does not contain capital letters.
 
 ## [gm_express](https://github.com/CFC-Servers/gm_express)
-gm_express is **REQUIRED** for PulsarStore to work.<br/>
+gm_express is **REQUIRED** for PulsarStore to work and is bundled inside PulsarLib so you do not need to install it yourself.<br/>
 
 ### What is [gm_express](https://github.com/CFC-Servers/gm_express) and why is it used?
 [**gm_express**](https://github.com/CFC-Servers/gm_express) is a library
@@ -64,11 +55,6 @@ meaning that the data has to be sent to an HTTP server.
 No private, personal or sensitive data is ever sent to the HTTP server, only public data that is required for PulsarStore to work.<br/>
 If you **do not** want to use gm_express' own web server kindly provided free of charge by [**CFC-Servers**](https://github.com/CFC-Servers) you can either [use your own](https://github.com/CFC-Servers/gm_express_service) or use the PulsarDevelopment teams' web server.<br/>
 If you need assistance or have any questions regarding gm_express, please join our [Discord](https://discord.gg/2ZQv7dVmtJ) and ask.
-
-### Installing gm_express
-1. Download the latest version of gm_express from [here](https://github.com/CFC-Servers/gm_express/archive/refs/heads/main.zip)
-2. Extract the contents of the zip file into your `garrysmod/addons` folder.
-3. Ensure the addon name does not contain capital letters.
 
 <br/>
 <br/>
