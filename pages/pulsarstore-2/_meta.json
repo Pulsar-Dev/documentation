@@ -10,7 +10,7 @@
         "title": "Migrating",
         "type": "separator"
     },
-    "migrating-pulsarv2": "Migrating from Pulsar 2.x",
+    "migrating-pulsar1": "Migrating from Pulsar Store 1",
     "migrating-bricks": "Migrating from Bricks",
     "--actions": {
         "title": "Package Actions",
