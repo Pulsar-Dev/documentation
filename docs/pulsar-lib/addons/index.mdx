@@ -1,0 +1,109 @@
+---
+id: addonsIndex
+name: ➕ PulsarLib.Addons
+---
+
+import MethodList from "../../../components/methodList";
+import Link from "@docusaurus/Link"
+
+# PulsarLib.Addons
+
+`PulsarLib.Addons` is used by all Pulsar addons to allow PulsarLibs core functionality to be extended onto the addon. This
+allows for easier development of addons, less code duplication, and a more consistent user and developer experience.
+
+## Creating an Addon
+
+An addon must first be created with <Link href="/pulsar-lib/addons/addonCreate">`PulsarLib.Addons.Create`.</Link>. This will
+create a new addon with the specified name. This function will then return a new AddonHandler object which you can run the following functions on:
+
+<MethodList methods={[
+	{
+		name: "SetFolder",
+		parent: "AddonHandler:",
+		description: "Sets the folder of the addon. This is the folder that the addon's files are located in.",
+		args: ["string"],
+		returns: ["AddonHandler"],
+		href: "https://github.com/Pulsar-Dev/pulsar-lib/blob/master/lua/pulsar_lib/core/sh_addons.lua#L82-L88"
+	},
+	{
+		name: "SetGlobalVar",
+		parent: "AddonHandler:",
+		description: "Sets the global variable for the addon. This should be the same that is defined in your addons files.",
+		args: ["table"],
+		returns: ["AddonHandler"],
+		href: "https://github.com/Pulsar-Dev/pulsar-lib/blob/master/lua/pulsar_lib/core/sh_addons.lua#L90-L96"
+	},
+	{
+		name: "SetPhrases",
+		parent: "AddonHandler:",
+		description: "Sets the phrases for the addon. This is used for the logging prefixes. Look at the example for more information.",
+		args: ["table"],
+		returns: ["AddonHandler"],
+		href: "https://github.com/Pulsar-Dev/pulsar-lib/blob/master/lua/pulsar_lib/core/sh_addons.lua#L98-L104"
+	},
+	{
+		name: "SetOnLoad",
+		parent: "AddonHandler:",
+		description: "A function that is ran when the addon is loaded.",
+		args: ["function"],
+		returns: ["AddonHandler"],
+		href: "https://github.com/Pulsar-Dev/pulsar-lib/blob/master/lua/pulsar_lib/core/sh_addons.lua#L106-L112"
+	},
+	{
+		name: "SetDependencies",
+		parent: "AddonHandler:",
+		description: "Sets the dependencies for the addon. This is a table of addon names and their versions. Look at the example for more information.",
+		args: ["table"],
+		returns: ["AddonHandler"],
+		href: "https://github.com/Pulsar-Dev/pulsar-lib/blob/master/lua/pulsar_lib/core/sh_addons.lua#L114-L120"
+	},
+	{
+		name: "SetRequiredVars",
+		parent: "AddonHandler:",
+		description: "Sets the required global variables for the addon to load. This is a table of global variable names.",
+		args: ["table"],
+		returns: ["AddonHandler"],
+		href: "https://github.com/Pulsar-Dev/pulsar-lib/blob/master/lua/pulsar_lib/core/sh_addons.lua#L122-L128"
+	},
+	{
+		name: "Load",
+		parent: "AddonHandler:",
+		description: "Loads the addon. This should be the final function called on the AddonHandler.",
+		args: [""],
+		returns: ["AddonHandler"],
+		href: "https://github.com/Pulsar-Dev/pulsar-lib/blob/master/lua/pulsar_lib/core/sh_addons.lua#L130-L311"
+	},
+]}
+/>
+
+## Example
+
+```lua
+PulsarLib.Addons.Create("Example Addon")
+	:SetFolder("example_addon")
+	:SetGlobalVar(ExampleAddon)
+	:SetDependencies({
+		["pulsar-ui"] = "latest",
+		["updatr"] = "1.0.0"
+	})
+	:SetPhrases({
+		Brand = {
+			PulsarLib.Logging.Colours.Brand, "ExampleAddon"
+		},
+		BrandPride = {
+			Color(228, 3, 3), "Ex",
+			Color(255, 140, 0), "am",
+			Color(255, 237, 0), "pl",
+			Color(0, 128, 38), "eA",
+			Color(36, 64, 142), "dd",
+			Color(115, 41, 130), "on"
+		}
+	})
+	:SetOnLoad(function()
+		print("Example addon loaded!")
+	end)
+	:SetRequiredVars({
+		GlobalVariable = true
+	})
+:Load()
+```

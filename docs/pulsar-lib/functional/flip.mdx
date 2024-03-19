@@ -1,0 +1,31 @@
+---
+id: flip
+title: flip
+---
+
+import Method from '../../../components/method';
+import Argument from '../../../components/method/argument';
+import ReturnValue from "../../../components/method/return_value";
+
+# flip
+<Method
+	name="PulsarLib.Functional.flip"
+	realm="shared"
+	args={[
+		<Argument type="function" name="func">Input function.</Argument>
+	]}
+	returns={[
+		<ReturnValue type="function" name="func">The flipped function</ReturnValue>
+	]}
+	repositoryUrl="https://github.com/Pulsar-Dev/pulsar-lib"
+	declaration="lua/pulsar_lib/core/sh_functional.lua#L35-39"
+>
+	Returns a function where the first two inputs are flipped.
+</Method>
+
+## Example
+
+```lua
+local flippedPrint = flip(print)
+flippedPrint("hello", "world") -- Outputs: "world hello"
+```

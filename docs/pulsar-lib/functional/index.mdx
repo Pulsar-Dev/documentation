@@ -1,0 +1,47 @@
+---
+id: functionalIndex
+title: PulsarLib.Functional
+---
+
+import MethodList from "../../../components/methodList";
+
+The `PulsarLib.Functional` library is a small set of functions making it easier to work with some functions in some situations.
+
+
+## Global Methods
+The following color methods are accessible via the `PulsarLib.Functional` global table:
+
+<MethodList methods={[
+	{
+		name: "partial",
+		parent: "PulsarLib.Functional.",
+		description: "Builds a partial function, with stored arguments.",
+		args: ["string", "string"],
+		returns: ["string", "string"],
+		href: "/pulsar-lib/functional/partial"
+	},
+	{
+		name: "flip",
+		parent: "PulsarLib.Functional.",
+		description: "Returns a function where the first two inputs are flipped.",
+		args: ["function"],
+		returns: ["function"],
+		href: "/pulsar-lib/functional/flip"
+	},
+	{
+		name: "reverse",
+		parent: "PulsarLib.Functional.",
+		description: "Reverses a set of input arguments.",
+		args: ["any"],
+		returns: ["any"],
+		href: "/pulsar-lib/functional/reverse"
+	},
+	{
+		name: "compose",
+		parent: "PulsarLib.Functional.",
+		description: "Build a function o from f/g so that f(g(x)) == o(x)",
+		args: ["any"],
+		returns: ["function"],
+		href: "/pulsar-lib/functional/compose"
+	},
+]}/>

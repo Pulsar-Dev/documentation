@@ -1,0 +1,24 @@
+---
+id: addonCreate
+name: PulsarLib.Addons.Create
+---
+
+import Method from '../../../components/method';
+import Argument from '../../../components/method/argument';
+import ReturnValue from "../../../components/method/return_value";
+
+# Create
+<Method
+	name="PulsarLib.Addons.Create"
+	realm="shared"
+	args={[
+		<Argument type="string" name="name">The name of the addon. This <b>must</b> be unique.</Argument>
+	]}
+	returns={[
+		<ReturnValue type="AddonHandler" name="Addon">The AddonHandler table. This allows you to set the rest of the needed variables.</ReturnValue>
+	]}
+	repositoryUrl="https://github.com/Pulsar-Dev/pulsar-lib"
+	declaration="lua/pulsar_lib/core/sh_functional.lua#L61-L78"
+>
+	Build a function o from f/g so that f(g(x)) == o(x)
+</Method>

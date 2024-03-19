@@ -1,0 +1,71 @@
+---
+id: storeindex
+title: Pulsar Store
+---
+
+import Admonition from '@theme/Admonition';
+
+## Getting Started
+
+To get started, you’ll need two things into your `garrysmod/addons` folder.
+- Pulsar Store
+- Pulsar-Lib
+
+<Admonition type="warning">
+  It is important to ensure that the addon folder names do not contain any spaces or special characters. This can cause issues with the addon loading.
+</Admonition>
+
+### Installing
+To install the addons, simply drag and drop the folders into your `garrysmod/addons` folder.
+
+#### Pulsar Store
+1. Download the latest version of PulsarStore from the release page
+2. Extract the contents of the zip file into your garrysmod/addons folder.
+3. Ensure the addon name does not contain capital letters.
+
+#### Pulsar-Lib
+1. Download the latest version of Pulsar-Lib from the release page
+2. if it has not come in the zip from gmodstore.
+3. Extract the contents of the zip file into your garrysmod/addons folder.
+4. Ensure the addon name does not contain capital letters.
+
+### Configuration
+Pulsar Store's configuration is mostly in-game, but there are some things that you need to configure in the files. This page will go over the configuration files and how to configure them.
+
+#### MySQL
+MySQL is not required for Pulsar Store, but it is recommended. MySQL can be used for storing data in an external database,
+which is useful for servers with multiple servers. If you don't know how to set up a MySQL server,
+you can find a tutorial [here](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04), or you can use one provided by your host.
+
+#### MySQL Configuration
+The MySQL configuration file can be found at the following location: `garrysmod/data/pulsarlib/mysql.json`. \
+If this file does not exist, you can create it yourself or restart your server to generate it. \
+The configuration file is pretty self-explanatory, but if you need help, you can find it below:
+```json
+{
+	"UsingMySQL": false,
+	"Password": "",
+	"Database": "",
+	"Username": "",
+	"Hostname": "",
+	"Port": 3306
+}
+```
+
+#### Currencies
+Currencies are the different types of currency that you can use in Pulsar Store. You can have as many currencies as you want,
+but you need at least one. The default currency is 'Pulsar Credits'.
+
+<Admonition type="warning">
+	Removing the default currency is **NOT** recommended, as it is used for a lot of things. \
+	The addon may not function correctly if you remove the default currency. \
+	**No support will be given if you remove the default currency.**
+</Admonition>
+
+More information can be found [here](./store-currencies).
+
+#### Languages
+The language used by Pulsar Store and any other addons that use Pulsar-Lib are set by the language picked by the player.
+If you want to change the default language, you can do so by clicking the language icon in the bottom right of the escape menu.
+
+If you would like to create a new language or modify an existing one, you can do so by making a pull request on the [Pulsar-Lib GitHub](https://github.com/Pulsar-Dev/store-2-languages).

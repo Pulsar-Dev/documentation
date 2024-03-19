@@ -1,0 +1,49 @@
+---
+id: store-actions
+title: 🤖 Actions
+---
+
+import Admonition from "@theme/Admonition";
+
+
+Actions are functions that are run once a package is purchased or ran. Actions are fairly easy to create and can do anything you would like.
+
+<Admonition type="tip">
+	All actions are ran and created serverside. No actions are created, ran or handled clientside. Everything that the client needs about actions will get sent when needed.
+</Admonition>
+
+## Creating an Action
+
+To create an action, you first need to register it using the **ActionHandler**. This can be done by using the `PulsarStore.Actions.Create` function.
+
+### Example
+```lua
+PulsarStore.Actions.Create("ExampleAction")
+    :OnPurchase(function(ply, argument)
+        if not IsValid(ply) then
+            print("Player dont exist!")
+            return
+        end
+
+        print("Player " .. ply:Nick() .. " purchased this package!")
+    end)
+    :OnPrePurchase(function(ply, argument)
+        if not ply:Alive() then
+            return {
+                canContinue = false,
+                message = "You need to be alive to purchase this package!"
+            }
+        end
+
+        return {
+            canContinue = true,
+            message = ""
+        }
+    end)
+    :ArgumentTitle("Example Argument")
+    :ArgumentExample("example")
+    :CanReturn(true)
+    :CanPermanent(true)
+:Done()
+```
+

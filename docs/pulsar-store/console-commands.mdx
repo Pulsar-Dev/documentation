@@ -1,0 +1,44 @@
+---
+id: store-consolecommands
+title: 💻 Console Commands
+---
+
+## Server
+### `pulsarstore2_givecredits`
+Gives the player a certain number of credits. Usage: `pulsarstore2_givecredits <steamid64> <amount>`
+
+### `pulsarstore2_setcredits`
+Gives the player a certain number of credits. Usage: `pulsarstore2_givecredits <steamid64> <amount>`
+
+## Client
+
+### `pulsarstore_open` / `pulsarstore_close` / `pulsarstore_toggle`
+Opens/Closes/Toggles the store window. \
+Usage: `pulsarstore_open`, `pulsarstore_close`, `pulsarstore_toggle`
+
+### `pulsarstore_openadmin` / `pulsarstore_closeadmin` / `pulsarstore_toggleadmin`
+Opens/Closes/Toggles the admin window. \
+Usage: pulsarstore_openadmin, pulsarstore_closeadmin, pulsarstore_toggleadmin
+
+## Debug Commands
+These commands should only be used for debugging purposes. They are not intended for normal use.
+
+### Server
+
+#### `pulsarstore_debug_loadimporters`
+Load all importers if not already loaded. \
+Usage: `pulsarstore_debug_loadimporters`
+
+#### `pulsarstore_debug_fetchdata`
+Fetches data from the database. \
+Usage: `pulsarstore_debug_fetchdata`
+
+### Client
+
+#### `pulsarstore_debug_fetchcredits`
+Re-fetches the client's credits from the server. \
+Usage: `pulsarstore_debug_fetchcredits`
+
+#### `pulsarstore_debug_regenpages`
+Regenerates the store pages. \
+Usage: `pulsarstore_debug_regenpages`

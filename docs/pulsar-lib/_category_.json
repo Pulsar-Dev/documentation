@@ -1,0 +1,8 @@
+{
+  "label": "🛠️ Pulsar Lib",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "A library which contains the core functionality of Pulsar Addons."
+  }
+}
