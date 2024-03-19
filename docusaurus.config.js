@@ -1,5 +1,3 @@
-import { themes as prismThemes } from 'prism-react-renderer';
-
 const config = {
 	title: 'pulsar/docs',
 	tagline: 'Dinosaurs are cool',
@@ -57,41 +55,23 @@ const config = {
 			style: 'dark',
 			links: [
 				{
-					title: 'Docs',
+					title: 'Pulsar',
 					items: [
 						{
-							label: 'Tutorial',
-							to: '/docs/intro',
+							label: 'GitHub',
+							to: 'https://github.com/Pulsar-Dev',
 						},
-					],
-				},
-				{
-					title: 'Community',
-					items: [
 						{
-							label: 'Stack Overflow',
-							href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+							label: 'Docs',
+							to: 'https://docs.lythium.dev',
+						},
+						{
+							label: 'GmodStore',
+							to: 'https://www.gmodstore.com/teams/pBHR7XxwQHWbTixsmqop3A',
 						},
 						{
 							label: 'Discord',
-							href: 'https://discordapp.com/invite/docusaurus',
-						},
-						{
-							label: 'Twitter',
-							href: 'https://twitter.com/docusaurus',
-						},
-					],
-				},
-				{
-					title: 'More',
-					items: [
-						{
-							label: 'Blog',
-							to: '/blog',
-						},
-						{
-							label: 'GitHub',
-							href: 'https://github.com/facebook/docusaurus',
+							to: 'https://discord.gg/WjdWPeePBE',
 						},
 					],
 				},
