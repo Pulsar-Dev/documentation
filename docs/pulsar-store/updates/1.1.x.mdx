@@ -1,0 +1,149 @@
+import Admonition from "@theme/Admonition";
+
+# 🍔 Version 1.1.x
+
+## What's New?
+
+### PulsarLib 1.1.0
+PulsarLib has been updated to version 1.1.0 which includes a few new features and bug fixes. The new features and fixes include:
+- New Module loading system - This allows for modules to be automatically loaded and updated without much hassle.
+- New libraries/helpers ported from Pulsar Store.
+	- Languages System
+	- Functional library
+	- Network Helper
+- Fixed bugs with the logging library
+- And more!
+
+### PulsarUI 2.2.0
+PulsarUI has been updated to version 2.2.0 which includes a few element reworks and bug fixes.
+- Reworked Text Entries to look better
+- Reworked the step counter to look less square and weird
+- Added `pulsar_ui_font_resize` convar to allow resizing of fonts (default is 1.0)
+- Old convars renamed to have `pulsar_ui_` prefix instead of `pixel_ui`
+
+### Updatr 1.0.0
+Pulsar Store has removed all usage of the gm_express library and has switched to using our own library called Updatr. \
+Updatr is a library that allows for easy updating and networking of large tables of data between the client and server by only sending the differences between the old and new table. \
+This means that we no longer have to send the entire table every time we want to update it, which reduces the time it takes to update and create data within Pulsar Store.
+
+<Admonition type="warning">
+	Updatr is currently very new and may have bugs. If you find any bugs, please report them in the [Pulsar Discord](https://discord.gg/WjdWPeePBE) or in the [Updatr GitHub repository](https://github.com/Pulsar-Dev/updatr).
+</Admonition>
+
+### Sandbox Actions
+You are now able to create package actions that can allow users to spawn entities, weapons, and more in the sandbox & sandbox derived gamemodes.
+![](/img/pulsar-store/updates/1.1.x-sandbox-actions.png)
+
+### Colors!
+Packages, Bundles and Categories can now have colours! \
+This allows for a more customizable experience when creating packages and bundles.
+![](/img/pulsar-store/updates/1.1.x-colors.png)
+
+### Animations!
+Lots of animations have been added to the main menu to make everything look a bit more fancy and improve the overall look of the store.
+
+### User List
+The Users page in the admin panel has been redone to show a list of online users instead of just a search bar.
+![](/img/pulsar-store/updates/1.1.x-user-list.png)
+
+### Package Return Limit
+You can now set a limit on the days a user can return a package after purchasing it. \
+This can be set in the configuration file.
+
+### Menu Web Links
+The main menu now can have web links on the bottom of the sidebar. These can be set in the configuration file.
+
+### Conversion Limits
+A limit can now be set on the amount of credits a user can convert in a day.
+
+### Configuration File Changes
+`PulsarStore.AdminUserGroups` has been removed and replaced with the one in the PulsarLib config. `(addons/pulsar_lib/lua/pulsar_lib/sh_init.lua)`
+
+`MaxPerDay` has been added to the `PulsarStore.Conversion` table.
+##### Example:
+```lua
+PulsarStore.Conversion = {
+    Enabled = {
+        CreditsToMoney = true,
+        MoneyToCredits = true
+    },
+
+    CreditPrice = 100, -- How much money is one credit worth?
+    MaxPerDay = 5000 -- How many credits can a user convert from money per day? Set this to 0 to disable.
+}
+```
+
+`ReturnDays` has been added to the `PulsarStore.ReturningItems` table
+##### Example:
+```lua
+PulsarStore.ReturningItems = {
+    Enabled = true, -- Should the player be allowed to return packages they dont want?
+    ReturnAmount = 50, -- How much of the package price should be returned? (50 = 50%, 100 = 100%, etc...)
+    ReturnDays = 14 -- The amount of days the player has to return the package
+}
+```
+
+`SandBoxActions` table has been added.
+##### Example:
+```lua
+PulsarStore.SandboxActions = {-- Config table for the Sandbox actions (spawning props, entities, weapons, etc)
+    Enabled = {
+        All = true,     -- Should all sandbox actions be enabled?
+        Effects = true, -- Should effect spawning be enabled?
+        NPCs = true,    -- Should NPC spawning be enabled?
+        Props = true,   -- Should prop spawning be enabled?
+        Ragdolls = true,-- Should ragdoll spawning be enabled?
+        SENTs = true,   -- Should SENT spawning be enabled?
+        SWEPs = true,   -- Should SWEP spawning be enabled?
+        Vehicles = true,-- Should vehicle spawning be enabled?
+  }
+}
+```
+
+`MenuWebLinks` table has been added.
+##### Example:
+```lua
+PulsarStore.MenuWebLinks = {
+    Enabled = true,
+    Links = {
+        [1] = {
+            ImageURL = "https://i.imgur.com/jbp3ZT5.png",
+            Link = "https://google.com",
+            Name = "Shop",
+        },
+        [2] = {
+            ImageURL  = "https://i.imgur.com/EtvPE3C.png",
+            Link = "https://google.com",
+            Name = "Discord",
+        }
+    }
+}
+```
+
+### Breaking Changes
+- Moved the Currencies table from `PulsarStore.InternalData.Currencies` to `PulsarStore.Currencies.Data`
+- Moved the actions table from `PulsarStore.Actions.List` to `PulsarStore.Data.Actions`
+- `PulsarStore.Net` table has been removed and replaced with `PulsarLib.Net`
+- `PulsarStore.Table` has been removed and replaced with `PulsarLib.Table`
+- `PulsarStore.API.CreateCategory` has had a new argument called `color` added. <br/> `PulsarStore.API.CreateCategory(name, icon, onSuccess, onError)` -> `PulsarStore.API.CreateCategory(name, icon, color, onSuccess, onError)`
+- `PulsarStore.API.UpdateCategory` has had a new argument called `color` added. <br/> `PulsarStore.API.UpdateCategory(id, name, icon, onSuccess, onError)` -> `PulsarStore.API.UpdateCategory(id, name, icon, color, onSuccess, onError)`
+- `PulsarStore.API.CreatePackage` has had a new argument called `color` added. <br/> `PulsarStore.API.CreatePackage(name, price, currency, permanent, icon, category_id, onSuccess, onError)` -> `PulsarStore.API.CreatePackage(name, price, currency, permanent, icon, category_id, color, onSuccess, onError)`
+- `PulsarStore.API.UpdatePackage` has had a new argument called `color` added. <br/> `PulsarStore.API.UpdatePackage(id, name, price, currency, permanent, icon, category_id, onSuccess, onError)` -> `PulsarStore.API.UpdatePackage(id, name, price, currency, permanent, icon, category_id, color, onSuccess, onError)`
+- `PulsarStore.API.CreateBundle` has had a new argument called `color` added. <br/> `PulsarStore.API.CreateBundle(name, price, category_id, currency, icon, onSuccess, onError)` -> `PulsarStore.API.CreateBundle(name, price, category_id, currency, icon, color, onSuccess, onError)`
+- `PulsarStore.API.UpdateBundle` has had a new argument called `color` added. <br/> `PulsarStore.API.UpdateBundle(id, name, price, category_id, currency, icon, onSuccess, onError)` -> `PulsarStore.API.UpdateBundle(id, name, price, category_id, currency, icon, color, onSuccess, onError)`
+- `PulsarStore.BroadcastAPIData` has now been removed and no longer does anything. This is now handled by Updatr.
+-
+
+### Other Changes
+- Renamed Libgmodstore name to Pulsar Store
+- Fixed Xenin Battlepass credits icon
+- Fixed Xenin Care Packages credits icon
+- Change NPC to use regular networking
+- Added `color` and `table` to the `PulsarStore.Types` table
+- Fixed errors with dumping data when no data is present
+- Fixed errors with SquishLogs
+- Fixed errors with bWhitelist
+- Fixed errors with XP action
+- Data no longer gets hard deleted. When a delete function is ran it will set the `deleted` column to `true`.
+- Removed warnings on startup if no data is present in the database.
+- Added new language strings for errors from the server that get sent to the client.
