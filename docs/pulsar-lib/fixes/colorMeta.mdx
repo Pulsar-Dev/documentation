@@ -1,12 +1,13 @@
 ---
-id: lerp
-title: Color Lerp Errors
+id: colorMeta
+title: colorMeta Errors
 ---
 
-# Color Lerp Errors
-## [...Stack] attempt to call method 'Lerp' (a nil value)
+# ColorMeta Errors
+## [...Stack] attempt to index local 'colorMeta' (a nil value)
 
-This error occurs when PulsarUI is trying to create its own colour lerp functions, but it is unable to due to your server not having the necessary fixes for Metatables.
+This error occurs when PulsarUI is trying to create its own colour modification functions,
+but it is unable to due to your server not having the necessary fixes for Metatables.
 
 ### Fix
 There are a few reasons why this error could be happening: Outdated server, Outdated `/lua/includes/init.lua` file, or another addon overwriting the `/lua/includes/init.lua` file.
